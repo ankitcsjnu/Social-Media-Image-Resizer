@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Image Resizer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📸 Social Media Image Resizer</h1>
+      <button class="button toggle-mode" onclick="toggleDarkMode()">🌗 Toggle Mode</button>
+    </header>
+
+    <div class="upload-area" id="dropArea">
+      <p>Drag & drop image here or</p>
+      <input type="file" accept="image/*" id="uploadInput" />
+    </div>
+
+    <div class="preview" id="previewContainer"></div>
+
+    <div class="controls">
+      <button class="button" onclick="resizeAll()">Resize for All Platforms</button>
+      <button class="button" onclick="clearAll()">🧼 Clear</button>
+    </div>
+
+    <div class="custom-resize">
+      <h3>Add Custom Size</h3>
+      <input type="text" id="customName" placeholder="Platform Name (e.g. Pinterest)" />
+      <input type="number" id="customWidth" placeholder="Width" />
+      <input type="number" id="customHeight" placeholder="Height" />
+      <button class="button" onclick="addCustomSize()">➕ Add</button>
+    </div>
+
+    <h2 style="text-align:center; margin-top:40px;">Resized Images</h2>
+    <div class="resized-images" id="resizedContainer"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
